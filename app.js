@@ -10,6 +10,12 @@ mongoose.connect(
     process.env.ALLY_DATABASE || 'mongodb://localhost/allydb'
 );
 
+// Import models
+require('./models/Business');
+require('./models/Product');
+require('./models/Ingredient');
+require('./models/User');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
