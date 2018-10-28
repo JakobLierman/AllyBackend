@@ -21,6 +21,10 @@ require('./models/User');
 // Routers
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var businessesRouter = require('./routes/businesses');
+var productsRouter = require('./routes/products');
+var ingredientsRouter = require('./routes/ingredients');
+var allergensRouter = require('./routes/allergens');
 
 var app = express();
 
@@ -36,6 +40,11 @@ app.use(i18n.init);
 // Routes
 app.use('/API', indexRouter);
 app.use('/API/users', usersRouter);
+app.use('/API/businesses', businessesRouter);
+app.use('/API/products', productsRouter);
+app.use('/API/ingredients', ingredientsRouter);
+app.use('/API/allergens', allergensRouter);
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     next(createError(404));
