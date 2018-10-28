@@ -13,8 +13,8 @@ let UserSchema = new mongoose.Schema({
     lastName: { type: String, required: true },
     email: {
         type: String,
-        required: true,
-        validator:
+        required: true
+        //validator:
     },
     business: {
         type: mongoose.Schema.Types.ObjectId,

@@ -7,7 +7,7 @@ let Ingredient = mongoose.model('Ingredient');
 let User = mongoose.model('User');
 
 /* GET home page. */
-router.get('/API', function (req, res, next) {
+router.get('/', function (req, res, next) {
     res.send('Ally backend server is up and running.');
 });
 
