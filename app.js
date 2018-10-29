@@ -16,6 +16,7 @@ mongoose.connect(
 require('./models/Business');
 require('./models/Product');
 require('./models/Ingredient');
+require('./models/Allergen');
 require('./models/User');
 
 // Routers

@@ -6,6 +6,11 @@ let IngredientSchema = new mongoose.Schema({
         required: true,
         min: 2,
         max: 100
+    },
+    allergen: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Allergen',
+        required: false
     }
 });
 

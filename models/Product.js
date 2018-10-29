@@ -11,12 +11,11 @@ let ProductSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    Ingredients: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ingredient'
-        }
-    ],
+    ingredients: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: 'Ingredient',
+        required: true
+    },
     category: String
 });
 
