@@ -11,6 +11,7 @@ mongoose.connect(
     process.env.ALLY_DATABASE || 'mongodb://localhost/allydb',
     {useNewUrlParser: true}
 );
+mongoose.set('useCreateIndex', true);
 
 // Import models
 require('./models/Business');
@@ -59,7 +60,7 @@ app.use(function (err, req, res, next) {
 
     // render the error page
     res.status(err.status || 500);
-    res.render('error');
+    res.json(err.message);
 });
 
 module.exports = app;
