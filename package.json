@@ -5,13 +5,13 @@
   "author": "Jakob Lierman",
   "private": true,
   "scripts": {
-    "start-local": "nodemon $NODE_DEBUG_OPTION ./bin/www",
+    "dev": "nodemon $NODE_DEBUG_OPTION ./bin/www",
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.3",
+    "cookie-parser": "1.4.3",
     "debug": "^4.1.0",
-    "express": "~4.16.0",
+    "express": "^4.16.0",
     "express-jwt": "^5.3.1",
     "http-errors": "^1.7.1",
     "i18n": "^0.8.3",

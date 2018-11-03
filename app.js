@@ -1,10 +1,10 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var mongoose = require('mongoose');
-var i18n = require("i18n");
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
+let mongoose = require('mongoose');
+let i18n = require("i18n");
 
 // Connect to database
 mongoose.connect(
@@ -21,14 +21,14 @@ require('./models/Allergen');
 require('./models/User');
 
 // Routers
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var businessesRouter = require('./routes/businesses');
-var productsRouter = require('./routes/products');
-var ingredientsRouter = require('./routes/ingredients');
-var allergensRouter = require('./routes/allergens');
+let indexRouter = require('./routes/index');
+let usersRouter = require('./routes/users');
+let businessesRouter = require('./routes/businesses');
+let productsRouter = require('./routes/products');
+let ingredientsRouter = require('./routes/ingredients');
+let allergensRouter = require('./routes/allergens');
 
-var app = express();
+let app = express();
 
 app.use(logger('dev'));
 app.use(express.json());

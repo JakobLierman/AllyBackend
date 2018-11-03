@@ -7,10 +7,7 @@ let ProductSchema = new mongoose.Schema({
         min: 2,
         max: 100
     },
-    description: {
-        type: String,
-        required: true
-    },
+    description: String,
     ingredients: {
         type: [mongoose.Schema.Types.ObjectId],
         ref: 'Ingredient',
