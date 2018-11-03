@@ -37,6 +37,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Internationalization
+i18n.configure({
+    locales: ['en', 'nl'],
+    cookie: 'langCookie',
+    directory: __dirname + '/locales'
+});
 app.use(i18n.init);
 
 // Routes
