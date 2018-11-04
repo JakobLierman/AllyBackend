@@ -5,6 +5,7 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let mongoose = require('mongoose');
 let i18n = require("i18n");
+let passport = require("passport");
 
 // Connect to database
 mongoose.connect(
@@ -19,6 +20,9 @@ require('./models/Product');
 require('./models/Ingredient');
 require('./models/Allergen');
 require('./models/User');
+
+// Import config
+require('./config/passport');
 
 // Routers
 let indexRouter = require('./routes/index');
@@ -35,6 +39,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
 
 // Internationalization
 i18n.configure({
