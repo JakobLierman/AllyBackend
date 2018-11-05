@@ -20,7 +20,22 @@ router.get('/', (req, res, next) => {
 });
 
 /* POST business. */
-// TODO 🔑
+router.post("/", /*auth, */(req, res, next) => {
+    let business = new Business({
+        name: req.body.name,
+        address: req.body.address,
+        phone: req.body.phone,
+        fax: req.body.fax,
+        businessKind: req.body.businessKind,
+        vatNumber: req.body.vatNumber,
+        website: req.body.website
+    });
+    business.products = [];
+    business.save((err, business) => {
+        if (err) return next(err);
+        res.json(business);
+    });
+});
 
 // Param for getting business by id
 router.param("businessId", (req, res, next, id) => {

@@ -15,7 +15,24 @@ router.get('/', (req, res, next) => {
 });
 
 /* POST ingredient. */
-// TODO 🔑
+router.post('/', /*auth, */(req, res, next) => {
+    Ingredient.find({name: req.body.name, creator: req.body.creator},
+        (err, result) => {
+            if (result.length) {
+                return res.status(406).json({message: 'You already have such an ingredient.'}) // TODO: i18n
+            }
+        }
+    );
+    let ingredient = new Ingredient({
+        name: req.body.name,
+        allergen: req.body.allergen,
+        creator: req.body.creator
+    });
+    ingredient.save((err, ingredient) => {
+        if (err) return next(err);
+        res.json(ingredient);
+    });
+});
 
 // Param for getting ingredient by id
 router.param('ingredientId', (req, res, next, id) => {
