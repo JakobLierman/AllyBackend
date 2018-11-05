@@ -13,7 +13,12 @@ let ProductSchema = new mongoose.Schema({
         ref: 'Ingredient',
         required: true
     },
-    category: String
+    category: String,
+    creator: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Business',
+        required: true
+    }
 });
 
 mongoose.model('Product', ProductSchema);

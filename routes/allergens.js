@@ -21,7 +21,7 @@ router.param("allergenId", (req, res, next, id) => {
         if (!allergen) return next(new Error("not found " + id));
         req.allergen = allergen;
         return next();
-    })
+    });
 });
 
 /* GET one allergen. */

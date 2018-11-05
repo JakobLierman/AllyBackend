@@ -23,13 +23,13 @@ let BusinessSchema = new mongoose.Schema({
     vatNumber: String, // TODO: validate-vat
     website: {
         type: String,
-        validate: /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/
+        //validate: /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ //example: bakkerij-lierman.be not working
     },
     products: {
         type: [mongoose.Schema.Types.ObjectId],
         ref: 'products',
         required: false
     }
-}, {collection: 'Businesses'});
+}, {collection: 'businesses'});
 
 mongoose.model('Business', BusinessSchema);

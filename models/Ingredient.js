@@ -12,7 +12,7 @@ let IngredientSchema = new mongoose.Schema({
         ref: 'Allergen',
         required: false
     },
-    business: {
+    creator: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Business',
         required: true
