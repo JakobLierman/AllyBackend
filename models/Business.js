@@ -7,10 +7,12 @@ let BusinessSchema = new mongoose.Schema({
         min: 2,
         max: 100
     },
-    address: String,
-    postalCode: Number,
-    city: String,
-    country: String, // TODO: i18n-iso-countries
+    address: {
+        streetAddress: String,
+        postalCode: Number,
+        city: String,
+        country: String, // TODO: i18n-iso-countries
+    },
     phone: String,
     fax: String,
     businessKind: {
@@ -21,7 +23,7 @@ let BusinessSchema = new mongoose.Schema({
     vatNumber: String, // TODO: validate-vat
     website: {
         type: String,
-        validate: /\+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d|2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}$/
+        validate: /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/
     },
     products: {
         type: [mongoose.Schema.Types.ObjectId],

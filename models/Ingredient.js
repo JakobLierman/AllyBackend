@@ -11,6 +11,11 @@ let IngredientSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Allergen',
         required: false
+    },
+    business: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Business',
+        required: true
     }
 });
 
