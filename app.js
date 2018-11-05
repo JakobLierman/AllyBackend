@@ -15,6 +15,7 @@ mongoose.connect(
 mongoose.set('useCreateIndex', true);
 
 // Import models
+require('./models/BusinessKind');
 require('./models/Business');
 require('./models/Product');
 require('./models/Ingredient');
@@ -27,6 +28,7 @@ require('./config/passport');
 // Routers
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
+let businessKindsRouter = require('./routes/businessKinds');
 let businessesRouter = require('./routes/businesses');
 let productsRouter = require('./routes/products');
 let ingredientsRouter = require('./routes/ingredients');
@@ -52,6 +54,7 @@ app.use(i18n.init);
 // Routes
 app.use('/API', indexRouter);
 app.use('/API/users', usersRouter);
+app.use('/API/businessKinds', businessKindsRouter);
 app.use('/API/businesses', businessesRouter);
 app.use('/API/products', productsRouter);
 app.use('/API/ingredients', ingredientsRouter);

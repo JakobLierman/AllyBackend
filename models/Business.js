@@ -13,7 +13,11 @@ let BusinessSchema = new mongoose.Schema({
     country: String, // TODO: i18n-iso-countries
     phone: String,
     fax: String,
-    businessKind: {type: String, required: true}, // TODO: enums (i18n)
+    businessKind: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'business',
+        required: true
+    },
     vatNumber: String, // TODO: validate-vat
     website: {
         type: String,
