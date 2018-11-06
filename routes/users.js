@@ -8,6 +8,20 @@ let passport = require('passport');
 router.get('/', function (req, res, next) {
     res.send('respond with a resource');
     // TODO
+
+/* Register user. */
+
+/* Log user in. */
+
+/* Checks if email is already in use or invalid. */
+
+// Param for getting user by id.
+
+/* GET one user. */
+
+/* PATCH user. */
+
+/* DELETE user. */
 });
 
 module.exports = router;

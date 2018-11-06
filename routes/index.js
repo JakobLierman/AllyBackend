@@ -13,4 +13,5 @@ router.get('/', function (req, res, next) {
     res.send('Ally backend server is up and running.');
 });
 
+/* Reset database. */
 module.exports = router;
